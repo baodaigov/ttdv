@@ -97,6 +97,48 @@
             </div>
         </div>
         <div class="body">
+            <style>
+                .covid-statistic{margin:50px 0;padding: 20px;}.covid-statistic-title{text-align: center;}.covid-statistics{display: flex;justify-content: center;}.covid-case{margin-right:50px;}.covid-case:last-child{margin-right: 0;}.covid-case-title{padding:8px 12px;border-radius:50px;font-size:0.955em;text-align: center;}.covid-cases{margin:10px 0;text-align: center;font-family:"GG Sans Bold",Arial, Helvetica, sans-serif;font-size:2em;}
+            </style>
+            <div class="covid-statistic">
+                <h3 class="covid-statistic-title">Thống kê số ca COVID-19 trên lãnh thổ Việt Nam (trong 24h qua)</h3>
+                <div class="covid-statistics">
+                    <div class="covid-case">
+                        <p class="covid-case-title" style="background: #ff84849d;color: #c42e2e;">Ca nhiễm</p>
+                        <p class="covid-cases infected">-</p>
+                    </div>
+                    <div class="covid-case">
+                        <p class="covid-case-title" style="background: #84ff849d;color: #1a7a32;">Phục hồi</p>
+                        <p class="covid-cases recovered">-</p>
+                    </div>
+                    <div class="covid-case">
+                        <p class="covid-case-title" style="background: #dddddd9d;color: #5f5f5f;">Tử vong</p>
+                        <p class="covid-cases deceased">-</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+              const api = "https://api.apify.com/v2/key-value-stores/ZsOpZgeg7dFS1rgfM/records/LATEST";
+
+              const getData = async function() {
+                const getJsonData = await fetch(api);
+                const cases = await getJsonData.json();
+                return cases;
+              }
+
+              const output = function() {
+                getData().then(cases => {
+                  const infected = cases.infected;
+                  const recovered = cases.recovered;
+                  const deceased = cases.deceased;
+                  $('.infected').text(`${infected.toLocaleString()}`);
+                  $('.recovered').text(`${recovered.toLocaleString()}`);
+                  $('.deceased').text(`${deceased.toLocaleString()}`);
+                })
+              }
+
+              output();
+            </script>
             <h1 class="title">COVID-19</h1>
             <article role="article">
                 <div class="article">
@@ -112,7 +154,7 @@
                                 </li>
                                 <li>
                                     <a href="https://bit.do/YeetYeet" class="grid-container-redirect">
-                                        Chỉ đạo, điều hành COVID-19
+                                        Các triệu chứng của COVID-19
                                         <i class="fal fa-chevron-right"></i>
                                     </a>
                                 </li>
@@ -218,6 +260,15 @@
         <div class="footer">
             <img src="../assets/image/quoc_huy_g.svg" width="30px" height="30px"/>
             <p>Cổng Thông tin và Dịch vụ Quốc gia Bảo Đại</p>
+            <div class="luottruycap" id="luotTRUYCAP" style="margin: 0 50px;">
+                <p>Lượt truy cập: ...</p>
+            </div>
+            <script async src="https://api.countapi.xyz/hit/ttdv.baodaigov.github.io/59e0bd14-ead7-4a50-939d-4e729455241c?callback=websiteVisits"></script>
+            <script type="text/javascript">
+              function websiteVisits(response){
+                document.getElementById('luotTRUYCAP').textContent = `Lượt truy cập: ${response.value}`;
+              }
+            </script>
         </div>
     </div>
 </body></html>
