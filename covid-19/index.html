@@ -27,16 +27,16 @@
   <meta property="og:url" content="https://baodaigov.github.io/ttdv/covid-19/"/>
   <link rel="canonical" href="https://baodaigov.github.io/ttdv/covid-19/" />
     
+
+  <link href="https://baodaigov.github.io/ttdv/assets/image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="https://baodaigov.github.io/ttdv/assets/css/all.min.css"/>
+  <link rel="preload" href="https://baodaigov.github.io/ttdv/assets/css/all.min.css" as="style"/>
+  <link rel="stylesheet" href="https://baodaigov.github.io/ttdv/assets/css/fontawesome.css"/>
+  <link rel="preload" href="https://baodaigov.github.io/ttdv/assets/css/fontawesome.css" as="style"/>
     
-  <link href="../assets/image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link rel="stylesheet" href="../assets/css/all.min.css"/>
-  <link rel="preload" href="../assets/css/all.min.css" as="style"/>
-  <link rel="stylesheet" href="../assets/css/fontawesome.css"/>
-  <link rel="preload" href="../assets/css/fontawesome.css" as="style"/>
     
-    
-  <link rel="preload" as="script" href="../assets/js/jquery.min.js">
-  <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+  <link rel="preload" as="script" href="https://baodaigov.github.io/ttdv/assets/js/jquery.min.js">
+  <script type="text/javascript" src="https://baodaigov.github.io/ttdv/assets/js/jquery.min.js"></script>
   
     
   <!-- Code injected by live-server extension -->
@@ -76,13 +76,24 @@
     }
     // ]]>
   </script>
+  <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $btt = $(".back-to-top");
+                $btt.toggleClass('triggered', $(this).scrollTop() > 250);
+            });
+        });
+  </script>
 </head><body style="padding:0px;margin:0px;">
     <div class="wrapper">
+        <a href="#" class="back-to-top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
         <div class="header">
             <div class="banner">
                 <div class="banner-inside">
                     <div style="display: flex;float: left;">
-                      <img src="../assets/image/quoc_huy.svg" alt="Quốc huy" class="logo"/>
+                      <img src="https://baodaigov.github.io/ttdv/assets/image/quoc_huy.svg" alt="Quốc huy" class="logo"/>
                       <div>
                         <strong>CỔNG THÔNG TIN DỊCH VỤ QUỐC GIA BẢO ĐẠI</strong>
                         <p>Email: baodaigov@gmail.com</p>
@@ -98,7 +109,7 @@
         </div>
         <div class="body">
             <style>
-                .image-article{background-image: url("../assets/image/Banner_img_Covid.png")}.covid-statistic{margin:50px 0;padding: 20px;}.covid-statistic-title{text-align: center;}.covid-statistics{display: flex;justify-content: center;}.covid-case{margin-right:50px;}.covid-case:last-child{margin-right: 0;}.covid-case-title{padding:8px 12px;border-radius:50px;font-size:0.955em;text-align: center;}.covid-cases{margin:10px 0;text-align: center;font-family:"GG Sans Bold",Arial, Helvetica, sans-serif;font-size:2em;}@media screen and (max-width:688px){.covid-statistics{flex-direction: column;}.covid-case{margin:0!important}.covid-case-title{max-width: 12rem;margin-left:auto;margin-right: auto;}}
+                .image-article{background-image: url("https://baodaigov.github.io/ttdv/assets/image/Banner_img_Covid.png")}.covid-statistic{margin:50px 0;padding: 20px;}.covid-statistic-title{text-align: center;}.covid-statistics{display: flex;justify-content: center;}.covid-case{margin-right:50px;}.covid-case:last-child{margin-right: 0;}.covid-case-title{padding:8px 12px;border-radius:50px;font-size:0.955em;text-align: center;}.covid-cases{margin:10px 0;text-align: center;font-family:"GG Sans Bold",Arial, Helvetica, sans-serif;font-size:2em;}@media screen and (max-width:688px){.covid-statistics{flex-direction: column;}.covid-case{margin:0!important}.covid-case-title{max-width: 12rem;margin-left:auto;margin-right: auto;}}
             </style>
             <div class="covid-statistic">
                 <h3 class="covid-statistic-title">Thống kê số ca COVID-19 trên lãnh thổ Việt Nam (trong 24h qua)</h3>
@@ -259,7 +270,7 @@
         </div>
         <div class="footer">
             <div class="footer-init">
-                <img src="../assets/image/quoc_huy_g.svg" width="30px" height="30px"/>
+                <img src="https://baodaigov.github.io/ttdv/assets/image/quoc_huy_g.svg" width="30px" height="30px"/>
                 <p style="margin-left: 10px">Cổng Thông tin và Dịch vụ Quốc gia Bảo Đại</p>
             </div>
             <div class="luottruycap" id="luotTRUYCAP" style="margin: 0 50px;">
